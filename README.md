@@ -19,7 +19,8 @@ This API is designed to predict machine downtime or production defects using a s
 
 2. **Create a Virtual Environment**  
    ```bash
-   conda activate /apienv
+   python -m venv venv
+   source venv/bin/activate
    ```
 
 3. **Install Dependencies**  
@@ -35,39 +36,37 @@ uvicorn main:app --reload
 
 ## API Endpoints
 
-### 1. **Upload Endpoint** (`/upload`)
+Here’s how you can test the API endpoints using Postman:
+
+### 1. **Upload Endpoint (`/upload`)**
 - **Method**: `POST`
 - **URL**: `http://127.0.0.1:8000/upload`
-- **Description**: Upload a CSV file containing manufacturing data.
-- **Request**: Upload a CSV file (e.g., containing columns `Machine_ID`, `Temperature`, `Run_Time`, `Downtime_Flag`).
-- **Response**:
+- **Body**: Select **form-data** and choose **File** type for your file input. Choose a `.csv` file.
+- **Response**: 
   ```json
   { "message": "File uploaded successfully", "columns": ["Machine_ID", "Temperature", "Run_Time", "Downtime_Flag"] }
   ```
 
-### 2. **Train Endpoint** (`/train`)
+### 2. **Train Endpoint (`/train`)**
 - **Method**: `POST`
 - **URL**: `http://127.0.0.1:8000/train`
-- **Description**: Train the machine learning model on the uploaded dataset.
-- **Request**: No body required.
-- **Response**:
+- **Body**: None
+- **Response**: 
   ```json
   { "message": "Model trained successfully", "accuracy": 0.85 }
   ```
 
-### 3. **Predict Endpoint** (`/predict`)
+### 3. **Predict Endpoint (`/predict`)**
 - **Method**: `POST`
 - **URL**: `http://127.0.0.1:8000/predict`
-- **Description**: Predict downtime based on input data.
-- **Request**:
+- **Body**: Select **raw** and choose **JSON**. Input JSON data:
   ```json
   { "Temperature": 80, "Run_Time": 120 }
   ```
-- **Response**:
+- **Response**: 
   ```json
   { "Downtime": 0, "Confidence": 0.85 }
   ```
-
 
 Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) to test the API.
 
