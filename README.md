@@ -69,4 +69,9 @@ Here’s how you can test the API endpoints using Postman:
   ```
 
 Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) to test the API.
+![Screenshot (78)](https://github.com/user-attachments/assets/4d2f41b4-1d80-44b8-9200-7f771c819fdc)
+![Screenshot (79)](https://github.com/user-attachments/assets/2843c362-5c4a-4ecb-9bac-de5a09614c32)
+![Screenshot (80)](https://github.com/user-attachments/assets/fb69bebb-792e-4eae-8ec9-e95bc1dc3709)
+![Screenshot (81)](https://github.com/user-attachments/assets/8adfeac3-9be2-422a-a8d9-a06025f24dbf)
+
 
